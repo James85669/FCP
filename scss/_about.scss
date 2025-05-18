@@ -1,0 +1,49 @@
+.about {
+  padding: 100px 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+  text-align: center;
+  min-height: 100vh; // ★ 確保它佔滿一整頁
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  .about__block {
+    max-width: 960px;
+    margin: 0 auto 60px;
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    &.with-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      text-align: left;
+
+      img {
+        width: 40%;
+        max-width: 300px;
+        border-radius: 8px;
+      }
+
+      p {
+        width: 50%;
+      }
+
+      &.reverse {
+        flex-direction: row-reverse;
+        text-align: right;
+
+        p {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+
+  .cta-btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    padding: 16px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #333;
+    }
+  }
+}

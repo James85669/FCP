@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FCP 離場設計所</title>
+  <link rel="stylesheet" href="./scss/main.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+ <header class="header">
+  <!-- LOGO（預設為白色，JS 會切換成黑色） -->
+  <div class="header__logo">
+   <img id="header-logo" src="./img/logo-light.svg" alt="FCP Logo" />
+  </div>
+
+  <!-- 導覽選單 -->
+  <nav class="header__nav">
+    <a href="#">未說的話</a>
+    <a href="#">離場規劃</a>
+    <a href="#">生命教室</a>
+  </nav>
+
+  <!-- 會員按鈕（會員 icon，預設為白色） -->
+  <div class="header__member">
+    <button class="hamburger" aria-label="會員選單">
+      <img class="member-icon" src="./img/member-light.svg" alt="會員圖示" />
+    </button>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section class="hero"> 
+    <div class="hero-spacer"></div>
+    <img class="messagewall" src="./img/message-wall.svg" alt="便條紙牆背景" />
+
+    <div class="hero__slides">
+      <div class="slide"><img src="./img/note1.svg" alt="留言1" /></div>
+      <div class="slide"><img src="./img/note2.svg" alt="留言2" /></div>
+      <div class="slide"><img src="./img/note3.svg" alt="留言3" /></div>
+    </div>
+  </section>
+  <!-- Fog Transition -->
+  <div class="fog-transition"></div>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>我們為什麼存在？</h2>
+    <div class="about__block">
+      <p>在這個瞬息萬變的時代，沒有人能預知下一刻會發生什麼。<br>
+        FCP（Funeral Create Project）誕生於一個簡單卻深刻的信念：每個人都值得有一場如你所願的告別，也應該有機會在生前安心安排未來，留下真正想說的話。</p>
+    </div>
+    <div class="about__block with-image">
+      <img src="./img/pic01.svg" alt="關於圖1">
+      <p>我們是一套專為現代人設計的「未來規劃平台」，提供客製化葬禮設計與虛擬遺囑教學服務，讓你在平靜中，建立專屬於自己的生命結尾藍圖。</p>
+    </div>
+    <div class="about__block with-image reverse">
+      <img src="./img/pic02.svg" alt="關於圖2">
+      <p>我們與傳統的活動策劃不同，FCP是一個結合生命教育、科技工具與人性關懷的全方位平台，幫助人們提早面對、理解、並擁抱終點，也更珍惜此刻。</p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <a href="#" class="cta-btn">開始策畫</a>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="回到最上面">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <img class="footer__logo" src="./img/footer-logo.svg" alt="FCP Logo" />
+      <div class="footer__social">
+        <img src="./img/icon-instargram.svg" alt="Instagram" />
+        <img src="./img/icon-facebook.svg" alt="Facebook" />
+      </div>
+    </div>
+    <hr />
+    <p class="footer-text">COPYRIGHT© 2025 Funeral Create Project All rights reserved.</p>
+  </footer>
+
+</body>
+<script src="./main.js"></script>
+
+</html>

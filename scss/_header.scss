@@ -1,0 +1,79 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  color: white;
+
+  a {
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  &__logo {
+    img {
+      height: 60px;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+
+      &:hover {
+        color: #aaa;
+      }
+    }
+  }
+
+  &__member {
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 90px;
+        height: 90px;
+        transition: filter 0.3s ease;
+      }
+    }
+  }
+
+  &--light {
+    color: #2f2f30;
+
+    a {
+      color: #2f2f30;
+    }
+
+    .member-icon {
+      filter: none;
+    }
+  }
+
+  &--dark {
+    color: white;
+
+    a {
+      color: white;
+    }
+
+    .member-icon {
+      filter: invert(1);
+    }
+  }
+}

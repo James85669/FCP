@@ -1,0 +1,27 @@
+
+@charset "UTF-8";
+$font-main: 'kurewa-gothic', sans-serif;
+$color-bg: #f9f6f0;
+$color-dark: #2f2f30;
+$color-white: #ffffff;
+$bg-paper: url('/img/paperwall.svg') no-repeat center center / cover;
+
+@import 'reset';
+@import 'header';
+@import 'postits';
+@import 'fog';
+@import 'about';
+@import 'cta';
+@import 'footer';
+
+body {
+  font-family: $font-main;
+  background: $bg-paper no-repeat center center / cover;
+  color: $color-dark;
+  margin: 0;
+  padding: 0;
+}
+
+body.lock-scroll {
+  overflow: hidden;
+}
