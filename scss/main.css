@@ -12,33 +12,44 @@ html, body {
   height: 100%;
 }
 
+body {
+  font-family: "kurewa-gothic", sans-serif;
+  background: url("/img/paperwall.svg");
+  color: #2f2f30;
+  margin: 0;
+  padding: 0;
+}
+
+body.lock-scroll {
+  overflow: hidden;
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2000;
+  background-color: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-.header a {
-  transition: color 0.3s ease;
-  font-size: 16px;
-  text-decoration: none;
 }
 .header__logo img {
   height: 60px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 .header__nav {
   display: flex;
-  gap: 30px;
+  gap: 70px;
+  margin-left: auto;
+  margin-right: 70px;
 }
 .header__nav a {
+  font-size: 16px;
+  text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
 }
 .header__nav a:hover {
   color: #aaa;
@@ -48,15 +59,17 @@ html, body {
   border: none;
   cursor: pointer;
 }
-.header__member .hamburger img {
-  width: 90px;
-  height: 90px;
+.header__member .hamburger .member-icon {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: filter 0.3s ease;
 }
 .header--dark {
   color: white;
 }
-.header--dark a {
+.header--dark .header__nav a {
   color: white;
 }
 .header--dark .member-icon {
@@ -65,18 +78,27 @@ html, body {
 .header--light {
   color: #2f2f30;
 }
-.header--light a {
+.header--light .header__nav a {
   color: #2f2f30;
 }
 .header--light .member-icon {
   filter: none;
 }
-.header .member-icon {
-  display: block;
-  width: 90px;
-  height: 90px;
-  -o-object-fit: contain;
-     object-fit: contain;
+
+.header--dark {
+  background-color: #3a3a3a;
+}
+
+.header--light {
+  background-color: url("/img/paperwall.svg") no-repeat center center/cover;
+}
+
+.header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
 }
 
 .hero {
@@ -195,12 +217,14 @@ html, body {
 
 .about {
   padding: 100px 40px;
-  background-color: rgba(255, 255, 255, 0.85);
+  margin-top: 95px;
+  min-height: 100vh;
   -webkit-clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
           clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
   text-align: center;
-  min-height: 100vh;
-  margin-top: 95px;
+  background: url("../img/paperwall.svg");
+  background-repeat: repeat;
+  background-size: auto;
 }
 .about h2 {
   font-size: 32px;
@@ -256,7 +280,7 @@ html, body {
 }
 
 .footer {
-  background: url("/img/paperwall.svg") no-repeat center center/cover no-repeat center center/cover;
+  background: url("/img/paperwall.svg") no-repeat center center/cover;
   color: #2f2f30;
   padding: 60px 40px;
   text-align: center;
@@ -293,16 +317,4 @@ html, body {
   font-size: 14px;
   text-align: left;
   opacity: 0.6;
-}
-
-body {
-  font-family: "kurewa-gothic", sans-serif;
-  background: url("/img/paperwall.svg") no-repeat center center/cover no-repeat center center/cover;
-  color: #2f2f30;
-  margin: 0;
-  padding: 0;
-}
-
-body.lock-scroll {
-  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

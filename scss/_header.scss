@@ -3,32 +3,35 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent; // 預設透明
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
-  a {
-    transition: color 0.3s ease;
-    font-size: 16px;
-    text-decoration: none;
+  // LOGO 區塊
+  &__logo img {
+    height: 60px;
+    transition:
+      opacity 0.3s ease,
+      filter 0.3s ease;
   }
 
-  &__logo {
-    img {
-      height: 60px;
-      transition: opacity 0.3s ease;
-    }
-  }
-
+  // 導覽連結
   &__nav {
     display: flex;
-    gap: 30px;
+    gap: 70px; // 可調整，建議 50~70 之間
+    margin-left: auto; // 👈 這個關鍵
+    margin-right: 70px; // 可選：讓它不貼太近 member
 
     a {
+      font-size: 16px;
+      text-decoration: none;
       color: inherit;
+      transition: color 0.3s ease;
 
       &:hover {
         color: #aaa;
@@ -36,50 +39,61 @@
     }
   }
 
+  // 會員圖示區
   &__member {
     .hamburger {
       background: none;
       border: none;
       cursor: pointer;
 
-      img {
-        width: 90px;
-        height: 90px;
+      .member-icon {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
         transition: filter 0.3s ease;
       }
     }
   }
 
-  // 初始為 dark（白字）
+  // 深色背景（預設使用白色圖示與字）
   &--dark {
     color: white;
 
-    a {
+    .header__nav a {
       color: white;
     }
 
     .member-icon {
-      filter: invert(1); // 讓白色 icon 顯示
+      filter: invert(1); // 顯示白 icon
     }
   }
 
-  // 滾動進 .about 時變 light（黑字）
+  // 淺色背景（在 about 時使用）
   &--light {
     color: #2f2f30;
 
-    a {
+    .header__nav a {
       color: #2f2f30;
     }
 
     .member-icon {
-      filter: none; // 顯示黑色版本 icon
+      filter: none; // 顯示黑 icon
     }
   }
-
-  .member-icon {
-  display: block;
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
 }
+
+.header--dark {
+  background-color: #3a3a3a;
+}
+
+.header--light {
+  background-color: $bg-paper no-repeat center center / cover;
+}
+
+.header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
 }

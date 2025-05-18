@@ -14,10 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentStage = 0;
   let isScrolling = false;
 
-  // 鎖住滾動直到轉場
+  // ✅ 一開始為 light 模式
+  header.classList.add('header--light');
+  header.classList.remove('header--dark');
+  logoImg.src = './img/logo-dark.svg';
+  memberIcon.src = './img/member-dark.svg';
+
+  // ✅ 鎖住滾動直到白霧後
   body.classList.add('lock-scroll');
 
-  // 延遲顯示第一則留言
+  // ✅ 延遲顯示第一則留言
   setTimeout(() => {
     updateSlides();
   }, 3000);
@@ -74,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
               fog.style.opacity = '0';
               setTimeout(() => {
                 fog.style.display = 'none';
+
+                // ✅ ✅ ✅ 關鍵解法：白霧淡出後主動更新 header 狀態
+                updateHeaderStyle();
               }, 1000);
               obs.disconnect();
             }
@@ -103,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll);
 
-  // ✅ Header 切換邏輯（使用 .getBoundingClientRect 判斷是否進入 .about）
+  // ✅ header 顏色切換邏輯
   function updateHeaderStyle() {
     const aboutTop = about.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
@@ -123,16 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ✅ 監聽 scroll 和初始載入
+  // ✅ 監聽 scroll → 每次都更新 header 狀態
   window.addEventListener('scroll', () => {
     requestAnimationFrame(updateHeaderStyle);
   });
- window.addEventListener('load', () => {
-  console.log('初始判斷 header 狀態');
-  updateHeaderStyle();
-});
 
-  // ✅ 回到頂部按鈕邏輯
+  // ✅ 初始強制判斷一次
+  window.addEventListener('load', () => {
+    updateHeaderStyle();
+  });
+
+  // ✅ 回到頂部按鈕
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     hero.style.opacity = '1';
