@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 鎖住滾動直到轉場
   body.classList.add('lock-scroll');
 
+  // 延遲顯示第一則留言
   setTimeout(() => {
     updateSlides();
   }, 3000);
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll);
 
-  // ✅ header 顏色變化依照 scroll 判斷
+  // ✅ Header 切換邏輯（使用 .getBoundingClientRect 判斷是否進入 .about）
   function updateHeaderStyle() {
     const aboutTop = about.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
@@ -122,11 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ✅ 監聽 scroll 和初始載入
   window.addEventListener('scroll', () => {
     requestAnimationFrame(updateHeaderStyle);
   });
-  window.addEventListener('load', updateHeaderStyle);
+ window.addEventListener('load', () => {
+  console.log('初始判斷 header 狀態');
+  updateHeaderStyle();
+});
 
+  // ✅ 回到頂部按鈕邏輯
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     hero.style.opacity = '1';

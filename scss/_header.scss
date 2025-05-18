@@ -10,11 +10,10 @@
   z-index: 2000;
   transition: background-color 0.3s ease, color 0.3s ease;
 
-  color: white;
-
   a {
-    color: white;
     transition: color 0.3s ease;
+    font-size: 16px;
+    text-decoration: none;
   }
 
   &__logo {
@@ -29,9 +28,7 @@
     gap: 30px;
 
     a {
-      text-decoration: none;
       color: inherit;
-      font-size: 16px;
 
       &:hover {
         color: #aaa;
@@ -53,18 +50,7 @@
     }
   }
 
-  &--light {
-    color: #2f2f30;
-
-    a {
-      color: #2f2f30;
-    }
-
-    .member-icon {
-      filter: none;
-    }
-  }
-
+  // 初始為 dark（白字）
   &--dark {
     color: white;
 
@@ -73,7 +59,27 @@
     }
 
     .member-icon {
-      filter: invert(1);
+      filter: invert(1); // 讓白色 icon 顯示
     }
   }
+
+  // 滾動進 .about 時變 light（黑字）
+  &--light {
+    color: #2f2f30;
+
+    a {
+      color: #2f2f30;
+    }
+
+    .member-icon {
+      filter: none; // 顯示黑色版本 icon
+    }
+  }
+
+  .member-icon {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
 }

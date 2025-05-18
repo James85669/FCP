@@ -4,6 +4,7 @@
   clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
   text-align: center;
   min-height: 100vh; // ★ 確保它佔滿一整頁
+  margin-top: 95px; // ★ 確保它不會被 header 蓋住
 
   h2 {
     font-size: 32px;
