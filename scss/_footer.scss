@@ -1,10 +1,10 @@
+@use 'sass:color';
 .footer {
-  background: url('../img/paperwall.svg') repeat;
+  background: url('/img/paperwall.svg') repeat;
   background-size: cover;
   padding: 100px 40px 60px;
   color: #2f2f30;
 
-  // 詩意文案
   &__slogan {
     text-align: center;
     font-size: 16px;
@@ -12,7 +12,6 @@
     margin-bottom: 60px;
   }
 
-  // 主要內容容器
   &__inner {
     max-width: 1440px;
     margin: 0 auto;
@@ -24,7 +23,6 @@
     gap: 60px;
   }
 
-  // 三欄資訊區
   &__infoGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -50,7 +48,6 @@
     }
   }
 
-  // Logo + 社群
   &__logoArea {
     display: flex;
     flex-direction: row;
@@ -74,7 +71,6 @@
     }
   }
 
-  // 分隔線與版權聲明
   hr {
     border: none;
     border-top: 1px solid #ccc;
