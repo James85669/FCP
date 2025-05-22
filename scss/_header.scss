@@ -1,32 +1,31 @@
 @use 'variables' as *;
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  // display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 2000;
-  background-color: transparent; // 預設透明
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
-  // LOGO 區塊
-  &__logo img {
-    height: 60px;
-    transition:
-      opacity 0.3s ease,
-      filter 0.3s ease;
+  &__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
   }
 
-  // 導覽連結
+  &__logo img {
+    height: 60px;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
   &__nav {
     display: flex;
-    gap: 70px; // 可調整，建議 50~70 之間
-    margin-left: auto; // 👈 這個關鍵
-    margin-right: 70px; // 可選：讓它不貼太近 member
+    gap: 70px;
 
     a {
       font-size: 16px;
@@ -40,61 +39,41 @@
     }
   }
 
-  // 會員圖示區
-  &__member {
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
+  &__member .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
 
-      .member-icon {
-        width: 60px;
-        height: 60px;
-        object-fit: contain;
-        transition: filter 0.3s ease;
-      }
+    .member-icon {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      transition: filter 0.3s ease;
     }
   }
 
-  // 深色背景（預設使用白色圖示與字）
   &--dark {
-    color: white;
+    background: $bg-paper repeat center center;
+    background-size: cover;
 
     .header__nav a {
-      color: white;
+      color: $color-bg;
     }
 
     .member-icon {
-      filter: invert(1); // 顯示白 icon
+      filter: invert(1);
     }
   }
 
-  // 淺色背景（在 about 時使用）
   &--light {
-    color: #2f2f30;
+ background-color: transparent;
 
     .header__nav a {
-      color: #2f2f30;
+      color: $color-dark;
     }
 
     .member-icon {
-      filter: none; // 顯示黑 icon
+      filter: none;
     }
   }
-}
-
-.header--dark {
-  background-color: #3a3a3a;
-}
-
-.header--light {
-  background-color: $bg-paper no-repeat center center / cover;
-}
-
-.header__inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
 }

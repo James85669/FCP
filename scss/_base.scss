@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'kurewa-gothic';
+  src: url('https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kurewa-gothic';
+  src: url('https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kurewa-gothic';
+  src: url('https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kurewa-gothic';
+  src: url('https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kurewa-gothic';
+  src: url('https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// 全站字體套用
+body {
+  font-family: 'kurewa-gothic', 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2f2f30;
+}

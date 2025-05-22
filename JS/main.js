@@ -14,16 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentStage = 0;
   let isScrolling = false;
 
-  // ✅ 一開始為 light 模式
-  header.classList.add('header--light');
-  header.classList.remove('header--dark');
-  logoImg.src = './img/logo-dark.svg';
-  memberIcon.src = './img/member-dark.svg';
-
-  // ✅ 鎖住滾動直到白霧後
+  // 鎖住滾動直到首頁動畫跑完
   body.classList.add('lock-scroll');
 
-  // ✅ 延遲顯示第一則留言
+  // 等待模糊動畫結束再顯示第一則留言
   setTimeout(() => {
     updateSlides();
   }, 3000);
@@ -80,9 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
               fog.style.opacity = '0';
               setTimeout(() => {
                 fog.style.display = 'none';
-
-                // ✅ ✅ ✅ 關鍵解法：白霧淡出後主動更新 header 狀態
-                updateHeaderStyle();
               }, 1000);
               obs.disconnect();
             }
@@ -112,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll);
 
-  // ✅ header 顏色切換邏輯
+  // Header 切換 dark/light（scroll 觸發）
   function updateHeaderStyle() {
     const aboutTop = about.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
@@ -132,22 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ✅ 監聽 scroll → 每次都更新 header 狀態
   window.addEventListener('scroll', () => {
     requestAnimationFrame(updateHeaderStyle);
   });
-
-  // ✅ 初始強制判斷一次
-  window.addEventListener('load', () => {
-    updateHeaderStyle();
-  });
-
-  // ✅ 回到頂部按鈕
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    hero.style.opacity = '1';
-    body.classList.add('lock-scroll');
-    currentStage = 0;
-    updateSlides();
-  });
+  window.addEventListener('load', updateHeaderStyle);
 });

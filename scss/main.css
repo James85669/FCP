@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  font-family: "kurewa-gothic", sans-serif;
+  font-family: "kurewa-gothic", "Noto Sans TC", sans-serif;
   background: url("../img/paperwall.svg");
   color: #2f2f30;
   margin: 0;
@@ -29,11 +29,17 @@ body.lock-scroll {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2000;
-  background-color: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  gap: 70px;
 }
 .header__logo img {
   height: 60px;
@@ -42,8 +48,6 @@ body.lock-scroll {
 .header__nav {
   display: flex;
   gap: 70px;
-  margin-left: auto;
-  margin-right: 70px;
 }
 .header__nav a {
   font-size: 16px;
@@ -67,38 +71,23 @@ body.lock-scroll {
   transition: filter 0.3s ease;
 }
 .header--dark {
-  color: white;
+  background: url("../img/paperwall.svg") repeat center center;
+  background-size: cover;
 }
 .header--dark .header__nav a {
-  color: white;
+  color: #f9f6f0;
 }
 .header--dark .member-icon {
   filter: invert(1);
 }
 .header--light {
-  color: #2f2f30;
+  background-color: transparent;
 }
 .header--light .header__nav a {
   color: #2f2f30;
 }
 .header--light .member-icon {
   filter: none;
-}
-
-.header--dark {
-  background-color: #3a3a3a;
-}
-
-.header--light {
-  background-color: url("../img/paperwall.svg") no-repeat center center/cover;
-}
-
-.header__inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
 }
 
 .hero {
@@ -216,74 +205,137 @@ body.lock-scroll {
 }
 
 .about {
-  padding: 100px 40px;
-  margin-top: 95px;
-  min-height: 100vh;
-  -webkit-clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
-          clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
-  text-align: center;
+  padding: 120px 0;
   background: url("../img/paperwall.svg");
-  background-repeat: repeat;
-  background-size: auto;
+  position: relative;
+  overflow: hidden;
 }
-.about h2 {
-  font-size: 32px;
-  margin-bottom: 48px;
+.about .about__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  position: relative;
+  z-index: 1;
 }
 .about .about__block {
-  max-width: 960px;
-  margin: 0 auto 60px;
+  position: relative;
 }
-.about .about__block p {
-  font-size: 18px;
-  line-height: 1.8;
+.about .about__intro {
+  margin-top: 50px;
+  text-align: center;
 }
-.about .about__block.with-image {
+.about .about__intro .text {
+  position: relative;
+  z-index: 2;
+}
+.about .about__intro .text h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.about .about__intro .text p {
+  font-size: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+  font-weight: 700;
+  line-height: 161%;
+  letter-spacing: 8.611px;
+}
+.about .about__intro .bg-color1 {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  z-index: 1;
+}
+.about .about__row {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   gap: 40px;
-  text-align: left;
 }
-.about .about__block.with-image img {
-  width: 40%;
-  max-width: 300px;
+.about .about__row .text {
+  width: 55%;
+  position: relative;
+  font-weight: 700;
+  line-height: 161%;
+  letter-spacing: 8.611px;
+}
+.about .about__row .text p {
+  font-size: 16px;
+  max-width: 560px;
+  line-height: 1.8;
+  left: 0px;
+  top: 65px;
+  position: relative;
+  z-index: 2;
+}
+.about .about__row .text .bg-shape {
+  position: absolute;
+  right: 50px;
+  top: -50px;
+  width: 100%;
+  z-index: 1;
+}
+.about .about__row .image {
+  width: 60%;
+}
+.about .about__row .image img {
+  margin-top: 90px;
+  width: 85%;
   border-radius: 8px;
 }
-.about .about__block.with-image p {
-  width: 50%;
+.about .about__illustration {
+  position: absolute;
+  left: 20px;
+  bottom: 405px;
+  width: 180px;
+  z-index: 2;
 }
-.about .about__block.with-image.reverse {
-  flex-direction: row-reverse;
-  text-align: right;
-}
-.about .about__block.with-image.reverse p {
-  text-align: right;
-}
-
-.cta {
+.about .about__cta {
+  position: relative;
+  margin-top: 100px;
   text-align: center;
-  padding: 80px 20px;
+  margin-top: 300px;
 }
-.cta .cta-btn {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  font-size: 18px;
-  padding: 16px 40px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s;
+.about .about__cta .btn-start {
+  width: 300px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.cta .cta-btn:hover {
-  background: #333;
+.about .about__cta .btn-start:hover {
+  content: url("/img/btn-start-hover.svg");
+}
+.about .about__cta .about-bg-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.about .about__cta .about-bg-side--left {
+  left: 0;
+}
+.about .about__cta .about-bg-side--left img {
+  width: 700px;
+  height: 370px;
+}
+.about .about__cta .about-bg-side--right {
+  right: 0;
+}
+.about .about__cta .about-bg-side--right img {
+  width: 600px;
+  height: 300px;
 }
 
 .footer {
   background: url("/img/paperwall.svg") repeat;
   background-size: cover;
-  padding: 100px 40px 60px;
   color: #2f2f30;
+  margin-top: 0px;
 }
 .footer__slogan {
   text-align: center;
@@ -353,4 +405,41 @@ body.lock-scroll {
   text-align: left;
   font-size: 12px;
   color: #666;
+}
+
+@font-face {
+  font-family: "kurewa-gothic";
+  src: url("https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kurewa-gothic";
+  src: url("https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kurewa-gothic";
+  src: url("https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kurewa-gothic";
+  src: url("https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kurewa-gothic";
+  src: url("https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  font-family: "kurewa-gothic", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2f2f30;
 }/*# sourceMappingURL=main.css.map */
