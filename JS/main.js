@@ -14,18 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const TOTAL_STAGES = 12;
   let currentStage = 0;
   let isScrolling = false;
+  let hasEnteredAbout = false;
 
-  // 鎖住初始滾動
+  // 初始：鎖住滾動
   body.classList.add('lock-scroll');
 
-  // 顯示第一則留言（延遲模糊動畫結束後）
+  // 延遲 3 秒顯示第一則留言
   setTimeout(() => {
     updateSlides();
   }, 3000);
 
   function updateSlides() {
-    // 清除現有 slide 狀態
-    slides.forEach((slide, index) => {
+    // 清除所有 slide 狀態
+    slides.forEach(slide => {
       slide.classList.remove(
         'slide--step-0', 'slide--step-1', 'slide--step-2',
         'slide--hidden-left', 'slide--hidden-right'
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fog.className = 'fog-transition';
 
-    // 處理留言階段 0~8
+    // 留言階段 (0~8)
     if (currentStage <= 8) {
       const currentSlideIndex = Math.floor(currentStage / 3);
       const currentStep = currentStage % 3;
@@ -49,34 +50,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      body.classList.add('lock-scroll'); // 返回留言時重新鎖住滾動
+      body.classList.add('lock-scroll');
       hero.style.opacity = '1';
       fog.style.display = 'none';
     }
 
-    // 處理白霧階段 9~11
+    // 白霧階段 (9~11)
     if (currentStage >= 9 && currentStage <= 11) {
       const fogStep = currentStage - 9;
       fog.style.display = 'block';
       fog.classList.add(`fog-stage-${fogStep}`);
 
-      // 讓第三張留言滑走
       if (currentStage === 9) {
         slides[2].classList.remove('slide--step-2');
         slides[2].classList.add('slide--hidden-left');
       }
 
-      // 到最後白霧階段後轉場
-      if (currentStage === 11) {
+      if (currentStage === 11 && !hasEnteredAbout) {
+        hasEnteredAbout = true;
         hero.style.transition = 'opacity 1s ease';
         hero.style.opacity = '0';
         body.classList.remove('lock-scroll');
 
-        // 用 scrollIntoView 轉場
         setTimeout(() => {
           about.scrollIntoView({ behavior: 'smooth' });
 
-          // fog 進入 .about 後淡出
           const fogObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
@@ -95,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 控制滾動狀態
+  // 滾動控制
   function handleScroll(e) {
     if (isScrolling) return;
     isScrolling = true;
@@ -115,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll);
 
-  // Header 自動切換 dark / light 模式
+  // Header 顏色變化（scroll 監聽）
   function updateHeaderStyle() {
     const aboutTop = about.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
@@ -140,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   window.addEventListener('load', updateHeaderStyle);
 
-  // 開始策畫按鈕 hover 切換圖片
+  // 開始策畫按鈕 hover
   if (btnStart) {
     btnStart.addEventListener('mouseover', () => {
       btnStart.src = './img/btn-start-hover.svg';
@@ -150,14 +148,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 回到頂部按鈕
-  // 回到頂部按鈕 hover 切換圖片
+  // 回到頂部按鈕 hover + 點擊
   if (backToTop) {
+    const icon = backToTop.querySelector('img');
+
     backToTop.addEventListener('mouseover', () => {
-      backToTop.querySelector('img').src = './img/backtotop-hover.svg';
+      icon.src = './img/backtotop-hover.svg';
     });
+
     backToTop.addEventListener('mouseout', () => {
-      backToTop.querySelector('img').src = './img/backtotop.svg';
+      icon.src = './img/backtotop.svg';
     });
 
     backToTop.addEventListener('click', () => {
@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero.style.opacity = '1';
       body.classList.add('lock-scroll');
       currentStage = 0;
+      hasEnteredAbout = false; // reset
       updateSlides();
     });
   }
