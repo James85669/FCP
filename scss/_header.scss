@@ -51,30 +51,31 @@
     }
   }
 
-  &--dark {
-    color: white;
-    background-color: rgba(58, 58, 58, 0.5);
+  .header__nav a {
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 1em;
+    z-index: 1;
 
-    .header__nav a {
-      color: white;
+    .nav-decor {
+      position: relative;
+      z-index: 2;
     }
 
-    .member-icon {
-      filter: invert(1);
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 140%;
+      background: url('../img/nav-bg.svg') no-repeat center / contain;
+      z-index: 1;
     }
   }
 
-  &--light {
-    color: #2f2f30;
-    background-color: rgba(255, 255, 255, 0.7);
-
-    .header__nav a {
-      color: #2f2f30;
-    }
-
-    .member-icon {
-      filter: none;
-    }
+  .member-icon {
+    filter: none;
   }
 }
-
