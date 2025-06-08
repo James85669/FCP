@@ -5,33 +5,50 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 159px;
+  padding: 20px 60px;
   z-index: 3000;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(58, 58, 58, 0.5); // 預設深色半透明
-  transition: background-color 0.4s ease, color 0.4s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__logo img {
-    height: 60px;
-    transition: opacity 0.3s ease;
+    width: 229px;
+    height: 98px;
+  }
+
+  // ✅ 新增這段容器，包住 nav + member
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 58px; // 你要的間距
   }
 
   &__nav {
     display: flex;
-    gap: 70px;
 
     a {
-      font-size: 16px;
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
+      display: block;
 
-      &:hover {
-        color: #aaa;
+      .nav-btn {
+        height: 121px;
+        width: 185px;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -43,39 +60,11 @@
       cursor: pointer;
 
       .member-icon {
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 90px;
         object-fit: contain;
         transition: filter 0.3s ease;
       }
     }
-  }
-
-  .header__nav a {
-    position: relative;
-    display: inline-block;
-    padding: 0.5em 1em;
-    z-index: 1;
-
-    .nav-decor {
-      position: relative;
-      z-index: 2;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 120%;
-      height: 140%;
-      background: url('../img/nav-bg.svg') no-repeat center / contain;
-      z-index: 1;
-    }
-  }
-
-  .member-icon {
-    filter: none;
   }
 }

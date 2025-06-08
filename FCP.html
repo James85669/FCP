@@ -10,29 +10,38 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="header header--dark">
+  <header class="header">
     <div class="header__inner">
       <!-- LOGO -->
       <div class="header__logo">
-        <img id="header-logo" src="./img/logo.svg" alt="FCP Logo" />
+        <img id="header-logo" src="./img/header-logo.svg" alt="FCP Logo" />
       </div>
 
-      <!-- 導覽選單 -->
-      <nav class="header__nav">
-        <a href="#"><span class="nav-decor">未說的話</span></a>
-        <a href="#"><span class="nav-decor">離場規劃</span></a>
-        <a href="#"><span class="nav-decor">生命教室</span></a>
-      </nav>
+      <!-- ✅ 新增 wrapper：nav + member 包在一起 -->
+      <div class="header__right">
+        <!-- 導覽圖片按鈕 -->
+        <nav class="header__nav">
+          <a href="#">
+            <img src="./img/header-btn1.svg" alt="未說的話" class="nav-btn" />
+          </a>
+          <a href="#">
+            <img src="./img/header-btn2.svg" alt="離場規劃" class="nav-btn" />
+          </a>
+          <a href="#">
+            <img src="./img/header-btn3.svg" alt="生命教室" class="nav-btn" />
+          </a>
+        </nav>
 
-      <!-- 會員按鈕 -->
-      <div class="header__member">
-        <button class="hamburger" aria-label="會員選單">
-          <img class="member-icon" src="./img/memberlogo.svg" alt="會員圖示" />
-        </button>
+        <!-- 會員 icon -->
+        <div class="header__member">
+          <button class="hamburger" aria-label="會員選單">
+            <img class="member-icon" src="./img/member.svg" alt="會員圖示" />
+          </button>
+        </div>
       </div>
     </div>
   </header>
+
 
   <!-- Hero -->
   <section class="hero">
@@ -110,53 +119,44 @@
     </div>
   </section>
 
-<footer class="footer">
-  <!-- 背景圖 -->
-  <div class="footer__bg">
-    <img src="./img/footerB.svg" alt="背景圖" />
-  </div>
-
-  <!-- 詩句（右上） -->
-  <p class="footer__quote">「關於人生的終章，我們可以選擇，用溫柔書寫。」</p>
-
-  <!-- 內容區 -->
-  <div class="footer__content">
-    <!-- 左側欄 -->
-    <div class="footer__infoGrid">
-      <div class="footer__col">
-        <h4>合作機構</h4>
-        <p>政府部門</p>
-        <p>社會機構</p>
-        <p>教育機構</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__slogan">「關於人生的終章，我們可以選擇，用溫柔書寫。」</p>
+    <div class="footer__inner">
+      <!-- left -->
+      <div class="footer__infoGrid">
+        <div class="footer__col">
+          <h4>合作機構</h4>
+          <p>政府部門</p>
+          <p>公益組織</p>
+          <p>教育機構</p>
+        </div>
+        <div class="footer__col">
+          <h4>客戶須知</h4>
+          <p>服務條款</p>
+          <p>隱私權政策</p>
+        </div>
+        <div class="footer__col">
+          <h4>聯絡我們</h4>
+          <p>客服信箱</p>
+          <p>實體地址</p>
+          <p>常見問題</p>
+        </div>
       </div>
-      <div class="footer__col">
-        <h4>客戶須知</h4>
-        <p>服務條款</p>
-        <p>隱私權政策</p>
-      </div>
-      <div class="footer__col">
-        <h4>聯絡我們</h4>
-        <p>客服聯絡</p>
-        <p>報價需求</p>
-        <p>常見問題</p>
-      </div>
-    </div>
 
-    <!-- 右側 logo + 社群 -->
-    <div class="footer__logoArea">
-      <img src="./img/footer-logo.svg" alt="人物插圖" class="footer__person" />
-      <div class="footer__social">
-        <img src="./img/icon-instargram.svg" alt="Instagram" />
-        <img src="./img/icon-facebook.svg" alt="Facebook" />
+      <!-- right -->
+      <div class="footer__logoArea">
+        <img src="./img/footer-logo.svg" alt="FCP Logo" class="footer__logo" />
+        <div class="footer__social">
+          <img src="./img/icon-instargram.svg" alt="Instagram" />
+          <img src="./img/icon-facebook.svg" alt="Facebook" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 分隔線與版權 -->
-  <hr />
-  <p class="footer__copyright">COPYRIGHT© 2025 FCPPLUS All rights reserved.</p>
-</footer>
-
+    <hr />
+    <p class="footer__copyright">COPYRIGHT© 2025 Funeral Create Project All rights reserved.</p>
+  </footer>
 
   <script src="./JS/main.js"></script>
 </body>
