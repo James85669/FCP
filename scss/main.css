@@ -29,34 +29,43 @@ body.lock-scroll {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  height: 159px;
+  padding: 20px 60px;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header__inner {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 70px;
 }
 .header__logo img {
-  height: 60px;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  width: 229px;
+  height: 98px;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 58px;
 }
 .header__nav {
   display: flex;
-  gap: 70px;
 }
 .header__nav a {
-  font-size: 16px;
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
+  display: block;
 }
-.header__nav a:hover {
-  color: #aaa;
+.header__nav a .nav-btn {
+  height: 121px;
+  width: 185px;
+  transition: opacity 0.3s ease;
+}
+.header__nav a .nav-btn:hover {
+  opacity: 0.8;
 }
 .header__member .hamburger {
   background: none;
@@ -64,30 +73,11 @@ body.lock-scroll {
   cursor: pointer;
 }
 .header__member .hamburger .member-icon {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   -o-object-fit: contain;
      object-fit: contain;
   transition: filter 0.3s ease;
-}
-.header--dark {
-  background: url("../img/paperwall.svg") repeat center center;
-  background-size: cover;
-}
-.header--dark .header__nav a {
-  color: #f9f6f0;
-}
-.header--dark .member-icon {
-  filter: invert(1);
-}
-.header--light {
-  background-color: transparent;
-}
-.header--light .header__nav a {
-  color: #2f2f30;
-}
-.header--light .member-icon {
-  filter: none;
 }
 
 .hero {
@@ -332,79 +322,99 @@ body.lock-scroll {
 }
 
 .footer {
-  background: url("/img/paperwall.svg") repeat;
-  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 10px;
+  background: url("/img/FooterB.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom center;
   color: #2f2f30;
-  margin-top: 0px;
+  width: 100%;
+  height: 250px;
 }
 .footer__slogan {
-  text-align: center;
-  font-size: 16px;
-  font-style: italic;
-  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  max-width: 1440px;
+  top: 60px;
+  text-align: right;
 }
 .footer__inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  top: 60px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 60px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
 }
 .footer__infoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 60px;
   flex: 1;
 }
 .footer__infoGrid .footer__col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 .footer__infoGrid .footer__col h4 {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
 }
 .footer__infoGrid .footer__col p {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 400;
   margin: 0;
-  line-height: 1.6;
+  line-height: normal;
 }
 .footer__logoArea {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  gap: 16px;
+  gap: 5px;
+  flex-direction: row;
 }
 .footer__logoArea .footer__logo {
-  height: 100px;
-  width: auto;
+  width: 100px;
+  height: 91px;
 }
 .footer__logoArea .footer__social {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 5px;
 }
 .footer__logoArea .footer__social img {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
+  gap: 5px;
 }
 .footer hr {
   border: none;
-  border-top: 1px solid #ccc;
-  margin: 60px auto 16px;
+  border-top: 1px solid #000;
+  margin: 0 auto 12px auto;
   max-width: 1440px;
+  position: relative;
+  z-index: 1;
+  top: 50px;
 }
 .footer__copyright {
+  font-size: 10px;
+  color: #000;
+  text-align: left;
   max-width: 1440px;
   margin: 0 auto;
-  text-align: left;
-  font-size: 12px;
-  color: #666;
+  position: relative;
+  z-index: 1;
+  top: 50px;
 }
 
 @font-face {
