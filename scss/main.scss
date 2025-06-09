@@ -1,8 +1,9 @@
-@use "reset";
-@use "header";
-@use "postits";
-@use "fog";
-@use "about";
-@use "footer";
-@use "variables";
-@use "base";
+@use "./mainP/reset";
+@use "./layout/header";
+@use "./mainP/postits";
+@use "./mainP/fog";
+@use "./mainP/about";
+@use "./layout/footer";
+@use "./variables";
+@use "./base";
+@use "./plan/plan.scss";

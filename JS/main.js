@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentStage = 0;
   let isScrolling = false;
   let hasEnteredAbout = false;
-  let hoverInterval;
-  let frame = 1;
 
+  // 鎖住滾動
   body.classList.add('lock-scroll');
 
+  // 延遲顯示留言動畫
   setTimeout(() => {
+    body.classList.remove('lock-scroll'); // ✅ 這裡放正確
     updateSlides();
   }, 3000);
 
@@ -45,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      body.classList.add('lock-scroll');
       hero.style.opacity = '1';
       fog.style.display = 'none';
     }
@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hasEnteredAbout = true;
         hero.style.transition = 'opacity 1s ease';
         hero.style.opacity = '0';
-        body.classList.remove('lock-scroll');
 
         setTimeout(() => {
           about.scrollIntoView({ behavior: 'smooth' });
@@ -81,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             });
           });
+
           fogObserver.observe(about);
         }, 1200);
       }
@@ -106,20 +106,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll);
 
-  // Hover 切換六張圖
+  // ✅ btnStart hover 動畫與點擊
   if (btnStart) {
-    btnStart.addEventListener('mouseover', () => {
-      hoverInterval = setInterval(() => {
-        frame++;
-        if (frame > 6) frame = 1;
-        btnStart.src = `/img/btn-start-${frame}.svg`;
-      }, 100);
+    let frame = 1;
+    const totalFrames = 6;
+    let isHovering = false;
+    let animationId;
+
+    const animate = () => {
+      if (!isHovering) return;
+      frame = frame < totalFrames ? frame + 1 : 1;
+      btnStart.src = `./img/btn-start-${frame}.svg`;
+      animationId = setTimeout(animate, 100);
+    };
+
+    btnStart.addEventListener('mouseenter', () => {
+      isHovering = true;
+      animate();
     });
 
-    btnStart.addEventListener('mouseout', () => {
-      clearInterval(hoverInterval);
+    btnStart.addEventListener('mouseleave', () => {
+      isHovering = false;
+      clearTimeout(animationId);
       frame = 1;
-      btnStart.src = './img/btn-start-1.svg';
+      btnStart.src = `./img/btn-start-1.svg`;
+    });
+
+    btnStart.addEventListener('click', () => {
+      window.location.href = './src/planning/planNote.html';
     });
   }
 });

@@ -1,0 +1,70 @@
+@use '../variables' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 159px;
+  padding: 20px 60px;
+  z-index: 3000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo img {
+    width: 229px;
+    height: 98px;
+  }
+
+  // ✅ 新增這段容器，包住 nav + member
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 58px; // 你要的間距
+  }
+
+  &__nav {
+    display: flex;
+
+    a {
+      display: block;
+
+      .nav-btn {
+        height: 121px;
+        width: 185px;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &__member {
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      .member-icon {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        transition: filter 0.3s ease;
+      }
+    }
+  }
+}

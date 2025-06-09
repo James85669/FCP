@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FCP 離場設計所</title>
+  <link rel="stylesheet" href="./scss/main.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <!-- LOGO -->
+      <div class="header__logo">
+        <img id="header-logo" src="./img/header-logo.svg" alt="FCP Logo" />
+      </div>
+
+      <!-- ✅ 新增 wrapper：nav + member 包在一起 -->
+      <div class="header__right">
+        <!-- 導覽圖片按鈕 -->
+        <nav class="header__nav">
+          <a href="#">
+            <img src="./img/header-btn1.svg" alt="未說的話" class="nav-btn" />
+          </a>
+          <a href="#">
+            <img src="./img/header-btn2.svg" alt="離場規劃" class="nav-btn" />
+          </a>
+          <a href="#">
+            <img src="./img/header-btn3.svg" alt="生命教室" class="nav-btn" />
+          </a>
+        </nav>
+
+        <!-- 會員 icon -->
+        <div class="header__member">
+          <button class="hamburger" aria-label="會員選單">
+            <img class="member-icon" src="./img/member.svg" alt="會員圖示" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-spacer"></div>
+    <img class="messagewall" src="./img/message-wall.svg" alt="便條紙牆背景" />
+
+    <div class="hero__slides">
+      <div class="slide"><img src="./img/note1.svg" alt="留言1" /></div>
+      <div class="slide"><img src="./img/note2.svg" alt="留言2" /></div>
+      <div class="slide"><img src="./img/note3.svg" alt="留言3" /></div>
+    </div>
+  </section>
+
+  <!-- Fog -->
+  <div class="fog-transition"></div>
+
+  <!-- About -->
+  <section class="about">
+    <div class="about__inner">
+
+      <!-- 1. 我們為什麼存在？ -->
+      <div class="about__block about__intro">
+        <img class="bg-shape bg-color1" src="./img/bg-color1.svg" alt="about-bg1" />
+        <div class="text">
+          <h2>我們為什麼存在？</h2>
+          <p>
+            在這個瞬息萬變的時代，沒有人能預知下一刻會發生什麼。<br />
+            FCP（Funeral Create Project）誕生於一個簡單卻深刻的信念：
+            每個人都值得有一場如你所願的告別，也應該有機會在生前安心安排未來，留下真正想說的話。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. 圖文區塊 bg-color2 左文字右圖 -->
+      <div class="about__block about__row">
+        <div class="text with-bg">
+          <img class="bg-shape bg-color2" src="./img/bg-color2.svg" alt="about-bg2" />
+          <p>
+            我們是一套專為現代人設計的「未來規劃平台」，提供客製化葬禮設計與虛擬遺囑教學服務，
+            讓你在平靜中，建立專屬於自己的生命結尾藍圖。
+          </p>
+        </div>
+        <div class="image">
+          <img src="./img/pic01.svg" alt="關於圖1" />
+        </div>
+      </div>
+
+      <!-- 3. 圖文區塊 bg-color3 左圖右文字 -->
+      <div class="about__block about__row">
+        <div class="image">
+          <img src="./img/pic02.svg" alt="關於圖2" />
+        </div>
+        <div class="text with-bg">
+          <img class="bg-shape bg-color3" src="./img/bg-color3.svg" alt="about-bg3" />
+          <p>
+            我們與傳統的活動策劃不同，FCP是一個結合生命教育、科技工具與人性關懷的全方位平台，
+            幫助人們提早面對、理解、並擁抱終點，也更珍惜此刻。
+          </p>
+        </div>
+      </div>
+    </div>
+    <img class="about__illustration" src="./img/coffeeman.svg" alt="插圖01" />
+    <!--  CTA 區塊 -->
+    <div class="about__cta">
+      <!-- 左右裝飾背景圖 -->
+      <div class="about-bg-side about-bg-side--left">
+        <img src="./img/bg-colorL1.svg" alt="左背景裝飾圖" />
+      </div>
+      <div class="about-bg-side about-bg-side--right">
+        <img src="./img/bg-colorR2.svg" alt="右背景裝飾圖" />
+      </div>
+
+      <!-- 開始策畫按鈕圖片 -->
+      <a href="./src/planning/planNote.html">
+        <img id="btnStart" class="btn-start" src="./img/btn-start-1.svg" alt="開始策劃按鈕" />
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__slogan">「關於人生的終章，我們可以選擇，用溫柔書寫。」</p>
+    <div class="footer__inner">
+      <!-- left -->
+      <div class="footer__infoGrid">
+        <div class="footer__col">
+          <h4>合作機構</h4>
+          <p>政府部門</p>
+          <p>公益組織</p>
+          <p>教育機構</p>
+        </div>
+        <div class="footer__col">
+          <h4>客戶須知</h4>
+          <p>服務條款</p>
+          <p>隱私權政策</p>
+        </div>
+        <div class="footer__col">
+          <h4>聯絡我們</h4>
+          <p>客服信箱</p>
+          <p>實體地址</p>
+          <p>常見問題</p>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="footer__logoArea">
+        <a href="./index.html">
+          <img src="./img/footer-logo.svg" alt="FCP Logo" class="footer__logo" />
+        </a>
+        <div class="footer__social">
+          <img src="./img/icon-instargram.svg" alt="Instagram" />
+          <img src="./img/icon-facebook.svg" alt="Facebook" />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <p class="footer__copyright">COPYRIGHT© 2025 Funeral Create Project All rights reserved.</p>
+  </footer>
+
+  <script src="./JS/main.js">
+  </script>
+</body>
+
+</html>
