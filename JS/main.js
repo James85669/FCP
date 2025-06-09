@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("🚀 main.js 已載入！");
+
   const slides = document.querySelectorAll('.slide');
   const fog = document.querySelector('.fog-transition');
   const about = document.querySelector('.about');
   const hero = document.querySelector('.hero');
   const body = document.body;
-
-  const header = document.querySelector('.header');
-  const btnStart = document.querySelector('.btn-start');
+  const btnStart = document.getElementById('btnStart');
 
   const TOTAL_STAGES = 12;
   let currentStage = 0;
   let isScrolling = false;
   let hasEnteredAbout = false;
+  let hoverInterval;
+  let frame = 1;
 
-  // 初始：鎖住滾動
   body.classList.add('lock-scroll');
 
-  // 延遲 3 秒顯示第一則留言
   setTimeout(() => {
     updateSlides();
   }, 3000);
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fog.className = 'fog-transition';
 
-    // 留言階段 (0~8)
     if (currentStage <= 8) {
       const currentSlideIndex = Math.floor(currentStage / 3);
       const currentStep = currentStage % 3;
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
       fog.style.display = 'none';
     }
 
-    // 白霧階段 (9~11)
     if (currentStage >= 9 && currentStage <= 11) {
       const fogStep = currentStage - 9;
       fog.style.display = 'block';
@@ -89,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ✅ 滾動控制（加上回到頂部時重設）
   function handleScroll(e) {
     if (isScrolling) return;
     isScrolling = true;
@@ -100,11 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
       currentStage--;
     }
 
-    // ✅ 重設白霧進場狀態
-    if (currentStage === 0) {
-      hasEnteredAbout = false;
-    }
-
     updateSlides();
 
     setTimeout(() => {
@@ -113,4 +105,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('wheel', handleScroll);
+
+  // Hover 切換六張圖
+  if (btnStart) {
+    btnStart.addEventListener('mouseover', () => {
+      hoverInterval = setInterval(() => {
+        frame++;
+        if (frame > 6) frame = 1;
+        btnStart.src = `/img/btn-start-${frame}.svg`;
+      }, 100);
+    });
+
+    btnStart.addEventListener('mouseout', () => {
+      clearInterval(hoverInterval);
+      frame = 1;
+      btnStart.src = './img/btn-start-1.svg';
+    });
+  }
 });
