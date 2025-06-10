@@ -1,5 +1,6 @@
 @use '../variables' as *;
 @use'../base';
+@use'./btn';
 
 body.planning {
   background: url('/img/paperwall.svg') repeat;
@@ -17,6 +18,7 @@ body.planning {
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 20px;
+    margin-top: -50px;
   }
 
   p {
@@ -26,26 +28,65 @@ body.planning {
   }
 }
 
-.section {
-  padding: 40px 20px;
-  position: relative;
-  display: flex;
-  justify-content: center;
 
-  .bubble-text {
-    background: url('/img/bg-plan1.svg') no-repeat center/contain;
-    padding: 60px;
-    max-width: 1190px;
-    text-align: left;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.7;
-    
-    
+.bubble-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1920px;
+  padding: 80px 20px;
+  margin-bottom: 90px;
+  margin-top: 0px;
+}
+
+.bubble {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  width: 50%;
+
+
+  &--left {
+    background-image: url('/img/bg-plan1.svg');
+    width: 1124px;
+    height: 355px;
+    bottom: 100px;
+    left: 200px;
   }
 
-  &--bg2 .bubble-text {
+  &--right {
     background-image: url('/img/bg-plan2.svg');
+    width: 805px;
+    height: 300px;
+    top: 200px;
+    right: 100px;
+  }
+
+  .bubble__text1 {
+    padding: 40px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 212%;
+    color: #2f2f30;
+    max-width: 1190px;
+    text-align: left;
+    margin-left: 100px;
+    margin-bottom: 30px;
+  }
+
+  .bubble__text2 {
+    padding: 40px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 212%;
+    color: #2f2f30;
+    max-width: 1190px;
+    text-align: left;
+    margin-left: 200px;
   }
 }
 
@@ -93,7 +134,7 @@ body.planning {
   align-items: flex-start;
   // padding: 40px 20px;
   gap: 0px;
-  margin-left: 780px;
+  margin-left: 750px;
   margin-top: 56px;
   max-width: 1440px;
 
@@ -106,8 +147,8 @@ body.planning {
     align-items: flex-start;
 
     label {
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 400;
       margin-bottom: 8px;
     }
 
@@ -127,36 +168,36 @@ body.planning {
     }
 
     .question-block {
-      margin-bottom: -20px;
+      margin-bottom: -15px;
 
     }
 
     .checkbox-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 5px;
 
       label {
-        font-weight: normal;
-        font-size: 14px;
+        font-weight: 400;
+        font-size: 20px;
       }
     }
   }
 
   .vangogh-img {
     flex-shrink: 0;
-    width: 300px;
+    width: 364px;
     border-radius: 8px;
-    margin-top: 0;
+    margin-top: 50px;
     align-self: flex-start;
-    margin-right: 300px;
+    margin-right: 200px;
   }
 }
 
 .character-tip {
   position: absolute;
   left: 40px;
-  bottom: -600px;
+  bottom: -890px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -181,20 +222,31 @@ body.planning {
   }
 }
 
-.character-img:hover + .tip-popup,
+.character-img:hover+.tip-popup,
 .character-tip:hover .tip-popup {
   display: block;
 }
+
 
 .cta {
   position: relative;
   margin-top: 80px;
   text-align: center;
 
-  .btn-start {
-    width: 400px;
-    cursor: pointer;
+  .btn-container {
+    width: 570px;
+    height: 355px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-continue {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 
   .cta__bg {
@@ -206,15 +258,10 @@ body.planning {
 
     &--left {
       left: -70px;
-      img {
-        width: 80%;
-      }
     }
+
     &--right {
       right: -70px;
-      img {
-        width: 80%;
-      }
     }
   }
 }

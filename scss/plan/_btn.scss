@@ -1,0 +1,21 @@
+.cta {
+  position: relative;
+  margin-top: 80px;
+  text-align: center;
+
+  .btn-container {
+    width: 570px;
+    height: 355px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-continue {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
