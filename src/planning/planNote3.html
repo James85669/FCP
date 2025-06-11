@@ -85,11 +85,44 @@
     <!-- CTA 按鈕（背景綠色區塊） -->
     <section class="block-p3 block-p3--green">
         <div class="btn-wrapper">
-            <img id="btnContinueP3" class="btn-continue" src="../../img/btn-keep-1.svg" alt="繼續策畫" />
+            <img id="btnContinue" class="btn-continue" src="../../img/btn-keep-1.svg" alt="繼續策畫" />
         </div>
     </section>
 
     <script src="../../js/btn-animate.js"></script>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('btnContinue');
+        if (!btn) return;
+
+        let frame = 1;
+        const totalFrames = 6;
+        let isHovering = false;
+        let animationId;
+
+        const animate = () => {
+            if (!isHovering) return;
+
+            frame = frame < totalFrames ? frame + 1 : 1;
+            btn.src = `../../img/btn-keep-${frame}.svg`;
+            animationId = setTimeout(animate, 100);
+        };
+
+        btn.addEventListener('mouseenter', () => {
+            isHovering = true;
+            animate();
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            isHovering = false;
+            clearTimeout(animationId);
+            frame = 1;
+            btn.src = '../../img/btn-keep-1.svg';
+        });
+    });
+
+</script>
 
 </html>
