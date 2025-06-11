@@ -1,6 +1,7 @@
-@use '../variables' as *;
-@use'../base';
-@use'./btn';
+@use '../scss/layout/variables' as *;
+@use'../scss/layout/base';
+@use'../scss/plan/btn';
+@use'../scss/plan/planPage2';
 
 body.planning {
   background: url('/img/paperwall.svg') repeat;

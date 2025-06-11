@@ -1,18 +1,23 @@
-body.planning {
+@use '../layout/variables' as *;
+@use '../layout/base';
+
+// 第二頁 SCSS 結構
+
+body.planning-p2 {
   background: url('/img/paperwall.svg') repeat;
   background-size: cover;
   color: #2f2f30;
   font-family: 'Noto Serif TC', serif;
 }
 
-.nav-links {
+.nav-links-p2 {
   display: flex;
   justify-content: center;
-  gap: 86px;
-  padding: 40px 0 20px;
+  gap: 60px;
+  padding: 40px 0;
 
   a {
-    font-size: 30px;
+    font-size: 24px;
     color: #2f2f30;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -24,98 +29,88 @@ body.planning {
   }
 }
 
-.section-block {
+.block-p2 {
   position: relative;
   max-width: 1440px;
-  margin: 0 auto 80px;
+  margin: 40px auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  gap: 40px;
+  padding: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   &--top {
-    background: url('/img/plan2-bg1.svg') no-repeat center/contain;
-    height: 450px;
+    background-image: url('/img/bg-p2-1.svg');
+    justify-content: space-between;
   }
 
-  &--bottom-right {
-    background: url('/img/plan2-bg2.svg') no-repeat center/contain;
-    height: 380px;
+  &--right {
+    background-image: url('/img/bg-p2-2.svg');
     justify-content: flex-end;
   }
 
-  &--bottom-left {
-    background: url('/img/plan2-bg3.svg') no-repeat center/contain;
-    height: 320px;
+  &--left {
+    background-image: url('/img/bg-p2-3.svg');
+    justify-content: flex-start;
   }
 
-  &--cta {
-    background: url('/img/plan2-bg4.svg') no-repeat center/contain;
-    height: 360px;
-    justify-content: center;
+  &__image img {
+    width: 400px;
+    border-radius: 12px;
   }
 
-  .img-box {
-    width: 300px;
-    margin-right: 60px;
-    img {
-      width: 100%;
-      display: block;
-    }
-  }
-
-  .question-box {
+  &__content {
     max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    label {
-      font-size: 20px;
-      font-weight: 600;
-    }
-
-    .input {
-      width: 300px;
-      padding: 10px 16px;
-      border-radius: 30px;
-      border: 1px solid #aaa;
-    }
+    font-size: 20px;
+    line-height: 1.8;
+    color: #2f2f30;
   }
 }
 
-.cta {
-  position: relative;
-  margin-top: 40px;
-  text-align: center;
+.input-p2 {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 16px;
+  font-size: 18px;
+  border: 1px solid #3E5764;
+  border-radius: 30px;
+  outline: none;
+  transition: border-color 0.3s ease;
 
-  .cta__bg {
+  &:focus {
+    border-color: #2f2f30;
+    box-shadow: 0 0 0 1px rgba(47, 47, 48, 0.2);
+  }
+}
+
+.cta-p2 {
+  position: relative;
+  text-align: center;
+  margin: 80px 0;
+
+  .btn-continue-p2 {
+    width: 400px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .cta-p2__bg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 0;
+    width: 80%;
 
     &--left {
-      left: -70px;
-      img {
-        width: 80%;
-      }
+      left: 0;
     }
 
     &--right {
-      right: -70px;
-      img {
-        width: 80%;
-      }
+      right: 0;
     }
   }
-
-  .btn-continue {
-    width: 400px;
-    cursor: pointer;
-    z-index: 1;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
 }
+

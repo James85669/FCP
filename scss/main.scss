@@ -4,6 +4,5 @@
 @use "./mainP/fog";
 @use "./mainP/about";
 @use "./layout/footer";
-@use "./variables";
-@use "./base";
-@use "./plan/plan.scss";
+@use "./layout/variables";
+@use "./layout/base";
