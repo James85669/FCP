@@ -1,0 +1,178 @@
+@use "../layout/variables" as *;
+
+body.planning-p3 {
+    background: url('/img/paperwall.svg') repeat;
+    background-size: 200px auto; // 或 background-size: 200px auto; 自訂尺寸
+    font-family: 'kurewa-gothic', sans-serif;
+    color: #2f2f30;
+}
+
+.nav-links-p3 {
+    display: flex;
+    justify-content: center;
+    gap: 86px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    a {
+        font-size: 30px;
+        color: #2f2f30;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+            border-color: #2f2f30;
+        }
+
+        &.active {
+            color: #337A99;
+            font-weight: 600;
+        }
+    }
+}
+
+.block-p3 {
+    max-width: 1920px;
+    margin: 0 auto 80px;
+    padding: 60px 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    .content-p3 {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .question-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .question-desc {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .rounded-input,
+        .rounded-textarea {
+            border-radius: 30px;
+            border: 1px solid #aaa;
+            padding: 16px 20px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+                border-color: #3E5764;
+                box-shadow: 0 0 0 1px rgba(62, 87, 100, 0.2);
+            }
+        }
+
+        .rounded-input {
+            width: 300px;
+        }
+
+        .rounded-textarea {
+            width: 627px;
+            height: 160px;
+            resize: none;
+        }
+
+        .file-label {
+            font-style: italic;
+        }
+    }
+}
+
+.block-p3--blue1 {
+    background-image: url('/img/planPage3-bg1.svg');
+}
+
+.block-p3--purple {
+    background-image: url('/img/planPage3-bg2.svg'); // ← 背景圖請照你原設定
+    justify-content: flex-start;
+
+    .img-p3--purple {
+        width: 260px;
+        flex-shrink: 0;
+        margin-right: 60px;
+        margin-left: 80px;
+    }
+}
+
+.block-p3--blue2 {
+    // background-image: url('/img/planPage3-bg3.svg');
+    justify-content: flex-start;
+}
+
+.block-p3--white {
+    // background-image: url('/img/p3-bg4.svg');
+    justify-content: flex-end;
+}
+
+.block-p3--orange {
+    background-image: url('/img/planPage3-bg3.svg');
+    justify-content: center;
+
+    .img-p3--orange {
+        width: 260px;
+        flex-shrink: 0;
+        margin-right: 60px;
+        margin-left: 80px;
+    }
+}
+
+.block-p3--green {
+    background-image: url('/img/planPage3-bg4.svg');
+    justify-content: center;
+    background-position: bottom center;
+
+    .btn-wrapper {
+        text-align: center;
+        margin-top: 40px;
+
+        .btn-continue {
+            width: 400px;
+            object-fit: contain;
+            display: block;
+        }
+    }
+}
+
+.image-set-p3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+
+    .image-gallery {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 24px;
+
+        img {
+            width: 180px;
+            border-radius: 8px;
+        }
+    }
+
+    .image-caption {
+        font-size: 16px;
+        text-align: center;
+        max-width: 600px;
+    }
+}

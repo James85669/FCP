@@ -1,10 +1,4 @@
-body.planning-p2 {
-  background: url('/img/paperwall.svg') repeat;
-  background-size: cover;
-  font-family: 'Noto Serif TC', serif;
-  color: #2f2f30;
-  font-family: 'kurewa-gothic', sans-serif;
-}
+
 
 // 導覽列樣式
 .nav-links-p2 {
@@ -12,7 +6,7 @@ body.planning-p2 {
   display: flex;
   justify-content: center;
   gap: 86px;
-  margin-top: 40px;
+  margin-top: 100px;
   margin-bottom: 80px;
 
   a {
@@ -35,7 +29,7 @@ body.planning-p2 {
 
 // 四個區塊共通樣式
 .block {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto 80px;
   position: relative;
   display: flex;
@@ -45,11 +39,7 @@ body.planning-p2 {
   background-size: contain;
   background-position: center;
 
-  .img-p2 {
-    width: 260px;
-    margin-right: 60px;
-    flex-shrink: 0;
-  }
+
 
   .content-p2 {
     flex: 1;
@@ -57,24 +47,42 @@ body.planning-p2 {
     flex-direction: column;
     gap: 16px;
 
+    .q1 {
+      margin-bottom: 150px;
+      margin-left: 300px;
+    }
+
+    .q2 {
+      margin-bottom: 50px;
+      margin-left: 750px;
+    }
+
+    .q3 {
+      margin-bottom: 50px;
+      margin-left: 650px;
+    }
+
     .question-title {
       font-size: 24px;
       font-weight: 600;
-      margin-bottom: 12px;
+
     }
 
     label {
+      display: block;
       font-size: 20px;
       font-weight: 400;
+      margin-bottom: 12px;
     }
 
     .rounded-input {
-      border-radius: 30px;
-      border: 1px solid #aaa;
-      padding: 8px 20px;
       width: 300px;
-      font-size: 16px;
+      padding: 10px 16px;
+      border: 1px solid #aaa;
+      border-radius: 30px;
+      font-size: 14px;
       outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
       &:focus {
         border-color: #3E5764;
@@ -86,8 +94,8 @@ body.planning-p2 {
       border-radius: 30px;
       border: 1px solid #aaa;
       padding: 16px 20px;
-      width: 100%;
-      height: 120px;
+      width: 627px;
+      height: 180px;
       font-size: 16px;
       outline: none;
       resize: none;
@@ -99,25 +107,37 @@ body.planning-p2 {
     }
   }
 }
+  .img-p2 {
+    width: 260px;
+    flex-shrink: 0;
+    margin-left: 500px;
+  }
 
 .block--green {
   background-image: url('/img/planPage-bg1.svg');
+  left: -200px;
 }
 
 .block--blue {
   background-image: url('/img/planPage-bg2.svg');
   justify-content: flex-end;
+  right: -500px;
+  top: -50px;
 }
 
 .block--orange {
   background-image: url('/img/planPage-bg3.svg');
   justify-content: flex-start;
+  height: 400px;
+  left: -400px;
+  bottom: 400px;
 }
 
 .block--gray {
   background-image: url('/img/planPage-bg4.svg');
   background-position: bottom center;
   justify-content: center;
+  margin-top: -400px;
 
   .btn-wrapper {
     text-align: center;
@@ -125,4 +145,4 @@ body.planning-p2 {
 }
 
 /* 按鈕動畫樣式 */
-// @import 'btn-continue-animation';
+@import 'btn-continue-animation';

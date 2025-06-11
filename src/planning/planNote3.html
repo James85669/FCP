@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>離場設計｜情境想像區</title>
+    <link rel="stylesheet" href="../../scss/plan.css" />
+</head>
+
+<body class="planning planning-p3">
+    <!-- 導覽列 -->
+    <nav class="nav-links-p3">
+        <a href="#">關於你</a>
+        <a href="#">想像你的圓滿時刻</a>
+        <a href="#" class="active">情境想像區</a>
+        <a href="#">棺木與場景設計</a>
+        <a href="#">最後的心意</a>
+    </nav>
+
+    <!-- Q1：場景填空（藍色左上）-->
+    <section class="block-p3 block-p3--blue1">
+        <div class="content-p3">
+            <p class="question-title">想像那一天，你希望告別的地點會在哪裡？</p>
+            <p class="question-desc">（例如：森林裡、海邊、老家的院子、山中小屋、教堂、草原⋯⋯）</p>
+            <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
+        </div>
+    </section>
+
+    <!-- Q2：插圖排版區（右上） + 文字敘述 -->
+    <section class="image-set-p3">
+        <div class="image-gallery">
+            <img src="../../img/planPage3-painting1.svg" alt="圖片1" />
+        </div>
+        <p class="image-caption">陽光、晚風，想像那天，你已無法言語，這場告別你希望怎麼展開？</p>
+    </section>
+
+    <!-- Q3：不規則背景（紫色） + 插圖 + checkbox -->
+    <section class="block-p3 block-p3--purple">
+        <img src="../../img/planPage3-painting2.svg" alt="插圖" class="img-p3 img-p3--purple" />
+        <div class="content-p3">
+            <p class="question-title">現場佈置希望有什麼樣的風格或感覺？</p>
+            <label><input type="checkbox" /> 溫馨自然（植物、花草、棉麻或布簾）</label>
+            <label><input type="checkbox" /> 儀式莊重（中堂布幔、長桌、燭台）</label>
+            <label><input type="checkbox" /> 簡單俐落（乾淨背景、少量花飾）</label>
+            <label><input type="checkbox" /> 村民夥伴（農具小物、生活形式）</label>
+            <label><input type="checkbox" /> 其他：</label>
+            <input type="text" placeholder="請填寫文字…" class="rounded-input" />
+        </div>
+    </section>
+
+    <!-- Q4：填空題（藍色左下）-->
+    <section class="block-p3 block-p3--blue2">
+        <div class="content-p3">
+            <p class="question-title">你希望現場播放什麼音樂？</p>
+            <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
+        </div>
+    </section>
+
+    <!-- Q5：右下題目 + checkbox + input -->
+    <section class="block-p3 block-p3--white">
+        <div class="content-p3">
+            <p class="question-title">你希望與來賓做什麼？（可複選）</p>
+            <label><input type="checkbox" /> 共同吃火鍋</label>
+            <label><input type="checkbox" /> 一起帶一物作為紀念物</label>
+            <label><input type="checkbox" /> 唱一首你喜歡的歌</label>
+            <label><input type="checkbox" /> 辦一場市集</label>
+            <label><input type="checkbox" /> 自訂行為</label>
+            <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
+        </div>
+    </section>
+
+    <!-- Q6：橘色底圖區 + checkbox -->
+    <section class="block-p3 block-p3--orange">
+         <img src="../../img/planPage3-painting3.svg" alt="插圖" class="img-p3 img-p3--orange" />
+        <div class="content-p3">
+            <p class="question-title">是否想將下方場景分享給某個人？</p>
+            <label><input type="checkbox" /> 是，<span class="file-label">upload your file.</span> <input
+                    type="file" /></label>
+            <label><input type="checkbox" /> 否</label>
+            <label><input type="checkbox" /> 還不確定</label>
+        </div>
+    </section>
+
+    <!-- CTA 按鈕（背景綠色區塊） -->
+    <section class="block-p3 block-p3--green">
+        <div class="btn-wrapper">
+            <img id="btnContinueP3" class="btn-continue" src="../../img/btn-keep-1.svg" alt="繼續策畫" />
+        </div>
+    </section>
+
+    <script src="../../js/btn-animate.js"></script>
+</body>
+
+</html>

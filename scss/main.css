@@ -451,4 +451,32 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #2f2f30;
+}
+
+.btn-continue-p2 {
+  width: 400px;
+  height: auto;
+  transition: none;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto;
+}
+
+.btn-wrapper,
+.btn-container {
+  width: 570px;
+  height: 355px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.btn-continue {
+  width: 570px;
+  height: 355px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  pointer-events: auto;
 }/*# sourceMappingURL=main.css.map */

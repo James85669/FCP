@@ -6,3 +6,20 @@
     object-fit: contain;
     margin: 0 auto;
 }
+
+.btn-wrapper,
+.btn-container {
+    width: 570px;
+    height: 355px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.btn-continue {
+    width: 570px;
+    height: 355px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    pointer-events: auto;
+}
