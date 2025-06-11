@@ -1,61 +1,109 @@
-<!-- 第二頁：離場策劃 P2 HTML -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>離場策劃 P2</title>
-  <link rel="stylesheet" href="../../scss/plan.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>離場設計｜想像你的圓滿時刻</title>
+    <link rel="stylesheet" href="../../scss/plan.css" />
 </head>
 
-<body class="planning-p2">
-  <!-- 導覽列 -->
-  <nav class="nav-links-p2">
-    <a href="#">關於你</a>
-    <a href="#">想像你的圓滿時刻</a>
-    <a href="#">情境想像區</a>
-    <a href="#">棺木與場景設計</a>
-    <a href="#">最後的心意</a>
-  </nav>
+<body class="planning planning-p2">
 
-  <!-- 第一個不規則圖區塊（左圖右文） -->
-  <section class="block-p2 block-p2--top">
-    <div class="block-p2__image">
-      <img src="../../img/p2-painting.svg" alt="油畫圖片" />
-    </div>
-    <div class="block-p2__content">
-      <p>在你理想的離場時刻，你想呈現出怎樣的氛圍？是一場輕聲道別的茶會？還是一段溫柔流動的音樂儀式？</p>
-    </div>
-  </section>
+    <!-- 導覽列 -->
+    <nav class="nav-links-p2">
+        <a href="#">關於你</a>
+        <a href="#" class="active">想像你的圓滿時刻</a>
+        <a href="#">情境想像區</a>
+        <a href="#">棺木與場景設計</a>
+        <a href="#">最後的心意</a>
+    </nav>
 
-  <!-- 第二個不規則圖區塊（右下） -->
-  <section class="block-p2 block-p2--right">
-    <div class="block-p2__content">
-      <p>如果可以安排一段影像或音樂，你會選擇什麼？為什麼？</p>
-    </div>
-  </section>
+    <!-- 不規則背景圖 1：油畫 + checkbox 題目 -->
+    <section class="block block--green">
+        <img src="../../img/planPage-painting1.svg" alt="油畫" class="img-p2" />
+        <div class="content-p2">
+            <p class="question-title">理想的告別時刻是？</p>
+            <label><input type="checkbox" /> 完成人生中最想完成的事之後</label>
+            <label><input type="checkbox" /> 經歷一次重要告別或圓滿旅程後</label>
+            <label><input type="checkbox" /> 自然老去，如樹葉靜靜飄落</label>
+            <label><input type="checkbox" /> 在生日或紀念日，像慶典一般</label>
+            <label><input type="checkbox" /> 沒有特定時間，隨緣而行</label>
+            <label><input type="checkbox" /> 其他：</label>
+            <input type="text" placeholder="請填寫文字…" class="rounded-input" />
+        </div>
+    </section>
 
-  <!-- 第三個不規則圖區塊（左下填空） -->
-  <section class="block-p2 block-p2--left">
-    <div class="block-p2__content">
-      <label for="p2-message">請輸入你希望留下的一段話：</label>
-      <input type="text" id="p2-message" class="input-p2" placeholder="寫下你的訊息...">
-    </div>
-  </section>
+    <!-- 不規則背景圖 2：右下 checkbox 題目 -->
+    <section class="block block--blue">
+        <div class="content-p2">
+            <p class="question-title">希望舉辦人生告別的年齡？</p>
+            <label><input type="checkbox" /> 不特別設定，隨遇而安</label>
+            <label><input type="checkbox" /> 60～70歲之間</label>
+            <label><input type="checkbox" /> 70～80歲之間</label>
+            <label><input type="checkbox" /> 80～90歲之間</label>
+            <label><input type="checkbox" /> 90歲以上</label>
+            <label><input type="checkbox" /> 其他：</label>
+            <input type="text" placeholder="請填寫文字…" class="rounded-input" />
+        </div>
+    </section>
 
-  <!-- 第四個不規則圖區塊（繼續策畫按鈕） -->
-  <div class="cta-p2">
-    <div class="cta-p2__bg cta-p2__bg--left">
-      <img src="../../img/bg-p2-L.svg" alt="左裝飾" />
-    </div>
-    <div class="cta-p2__bg cta-p2__bg--right">
-      <img src="../../img/bg-p2-R.svg" alt="右裝飾" />
-    </div>
-    <img id="btnContinueP2" class="btn-continue-p2" src="../../img/btn-keep-1.svg" alt="繼續策劃按鈕" />
-  </div>
+    <!-- 不規則背景圖 3：左下填空題 -->
+    <section class="block block--orange">
+        <div class="content-p2">
+            <p class="question-title">有沒有想要說的話，想讓誰聽見？</p>
+            <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
+        </div>
+    </section>
 
-  <script src="../../js/btn-continue-animation.js"></script>
+    <!-- 不規則背景圖 4：底部按鈕（含背景圖） -->
+    <!-- 第四個不規則圖區塊（繼續策畫按鈕） -->
+    <div class="cta-p2">
+        <section class="block block--gray">
+            <div class="btn-wrapper">
+                <div class="btn-container">
+                    <img id="btnContinueP2" class="btn-continue" src="../../img/btn-keep-1.svg" alt="繼續策畫" />
+                </div>
+            </div>
+            <!-- <div class="cta-p2__bg">
+                <img src="../../img/planPage-bg4.svg" alt="底圖" />
+            </div> -->
+        </section>
+    </div>
+
+
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('btnContinue');
+        if (!btn) return;
+
+        let frame = 1;
+        const totalFrames = 6;
+        let isHovering = false;
+        let animationId;
+
+        const animate = () => {
+            if (!isHovering) return;
+
+            frame = frame < totalFrames ? frame + 1 : 1;
+            btn.src = `../../img/btn-keep-${frame}.svg`;
+            animationId = setTimeout(animate, 100);
+        };
+
+        btn.addEventListener('mouseenter', () => {
+            isHovering = true;
+            animate();
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            isHovering = false;
+            clearTimeout(animationId);
+            frame = 1;
+            btn.src = '../../img/btn-keep-1.svg';
+        });
+    });
+
+</script>
 
 </html>

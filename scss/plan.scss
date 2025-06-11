@@ -2,6 +2,7 @@
 @use'../scss/layout/base';
 @use'../scss/plan/btn';
 @use'../scss/plan/planPage2';
+@use './plan/btn-continue-animation';
 
 body.planning {
   background: url('/img/paperwall.svg') repeat;
@@ -116,7 +117,7 @@ body.planning {
   justify-content: center;
   gap: 86px;
 
-  a {
+  .nav-link {
     font-size: 30px;
     color: #2f2f30;
     text-decoration: none;
@@ -125,6 +126,12 @@ body.planning {
 
     &:hover {
       border-color: #2f2f30;
+    }
+
+    &.active {
+      color: #337A99;
+      font-weight: 600;
+      border-bottom: 2px solid #337A99;
     }
   }
 }

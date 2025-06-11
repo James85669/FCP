@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  font-family: "kurewa-gothic", "Noto Sans TC", sans-serif;
+  font-family: "kurewa-gothic";
   background: url("../img/paperwall.svg");
   color: #2f2f30;
   margin: 0;

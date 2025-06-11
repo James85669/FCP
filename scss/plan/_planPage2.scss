@@ -1,23 +1,22 @@
-@use '../layout/variables' as *;
-@use '../layout/base';
-
-// 第二頁 SCSS 結構
-
 body.planning-p2 {
   background: url('/img/paperwall.svg') repeat;
   background-size: cover;
-  color: #2f2f30;
   font-family: 'Noto Serif TC', serif;
+  color: #2f2f30;
+  font-family: 'kurewa-gothic', sans-serif;
 }
 
+// 導覽列樣式
 .nav-links-p2 {
+  text-align: center;
   display: flex;
   justify-content: center;
-  gap: 60px;
-  padding: 40px 0;
+  gap: 86px;
+  margin-top: 40px;
+  margin-bottom: 80px;
 
   a {
-    font-size: 24px;
+    font-size: 30px;
     color: #2f2f30;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -26,91 +25,104 @@ body.planning-p2 {
     &:hover {
       border-color: #2f2f30;
     }
+
+    &.active {
+      color: #337A99;
+      font-weight: 600;
+    }
   }
 }
 
-.block-p2 {
-  position: relative;
+// 四個區塊共通樣式
+.block {
   max-width: 1440px;
-  margin: 40px auto;
+  margin: 0 auto 80px;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding: 40px;
-  background-size: contain;
+  padding: 40px 60px;
   background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
 
-  &--top {
-    background-image: url('/img/bg-p2-1.svg');
-    justify-content: space-between;
+  .img-p2 {
+    width: 260px;
+    margin-right: 60px;
+    flex-shrink: 0;
   }
 
-  &--right {
-    background-image: url('/img/bg-p2-2.svg');
-    justify-content: flex-end;
-  }
+  .content-p2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-  &--left {
-    background-image: url('/img/bg-p2-3.svg');
-    justify-content: flex-start;
-  }
-
-  &__image img {
-    width: 400px;
-    border-radius: 12px;
-  }
-
-  &__content {
-    max-width: 600px;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #2f2f30;
-  }
-}
-
-.input-p2 {
-  width: 100%;
-  max-width: 600px;
-  padding: 12px 16px;
-  font-size: 18px;
-  border: 1px solid #3E5764;
-  border-radius: 30px;
-  outline: none;
-  transition: border-color 0.3s ease;
-
-  &:focus {
-    border-color: #2f2f30;
-    box-shadow: 0 0 0 1px rgba(47, 47, 48, 0.2);
-  }
-}
-
-.cta-p2 {
-  position: relative;
-  text-align: center;
-  margin: 80px 0;
-
-  .btn-continue-p2 {
-    width: 400px;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .cta-p2__bg {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 0;
-    width: 80%;
-
-    &--left {
-      left: 0;
+    .question-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
-    &--right {
-      right: 0;
+    label {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .rounded-input {
+      border-radius: 30px;
+      border: 1px solid #aaa;
+      padding: 8px 20px;
+      width: 300px;
+      font-size: 16px;
+      outline: none;
+
+      &:focus {
+        border-color: #3E5764;
+        box-shadow: 0 0 0 1px rgba(62, 87, 100, 0.2);
+      }
+    }
+
+    .rounded-textarea {
+      border-radius: 30px;
+      border: 1px solid #aaa;
+      padding: 16px 20px;
+      width: 100%;
+      height: 120px;
+      font-size: 16px;
+      outline: none;
+      resize: none;
+
+      &:focus {
+        border-color: #3E5764;
+        box-shadow: 0 0 0 1px rgba(62, 87, 100, 0.2);
+      }
     }
   }
 }
 
+.block--green {
+  background-image: url('/img/planPage-bg1.svg');
+}
+
+.block--blue {
+  background-image: url('/img/planPage-bg2.svg');
+  justify-content: flex-end;
+}
+
+.block--orange {
+  background-image: url('/img/planPage-bg3.svg');
+  justify-content: flex-start;
+}
+
+.block--gray {
+  background-image: url('/img/planPage-bg4.svg');
+  background-position: bottom center;
+  justify-content: center;
+
+  .btn-wrapper {
+    text-align: center;
+  }
+}
+
+/* 按鈕動畫樣式 */
+// @import 'btn-continue-animation';
