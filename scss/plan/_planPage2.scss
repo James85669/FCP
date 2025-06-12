@@ -63,7 +63,7 @@
     }
 
     .question-title {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
 
     }
@@ -121,8 +121,9 @@
 .block--blue {
   background-image: url('/img/planPage-bg2.svg');
   justify-content: flex-end;
-  right: -500px;
-  top: -50px;
+  width: 100%;
+  right: -400px;
+  top: -70px;
 }
 
 .block--orange {

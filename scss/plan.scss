@@ -143,7 +143,7 @@ body.planning {
   align-items: flex-start;
   // padding: 40px 20px;
   gap: 0px;
-  margin-left: 750px;
+  margin-left: 640px;
   margin-top: 56px;
   max-width: 1440px;
 
@@ -177,14 +177,22 @@ body.planning {
     }
 
     .question-block {
-      margin-bottom: -15px;
-
+      margin-bottom: -15px; 
+      font-size: 20px;
+      font-weight: 600;
     }
+
 
     .checkbox-group {
       display: flex;
       flex-direction: column;
       gap: 5px;
+
+      .question-title {
+        font-size: 20px;
+        font-weight: 600;
+
+      }
 
       label {
         font-weight: 400;

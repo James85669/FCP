@@ -110,7 +110,7 @@ body {
   margin-left: 650px;
 }
 .block .content-p2 .question-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 .block .content-p2 label {
@@ -161,8 +161,9 @@ body {
 .block--blue {
   background-image: url("/img/planPage-bg2.svg");
   justify-content: flex-end;
-  right: -500px;
-  top: -50px;
+  width: 100%;
+  right: -400px;
+  top: -70px;
 }
 
 .block--orange {
@@ -212,13 +213,6 @@ body {
   pointer-events: auto;
 }
 
-body.planning-p3 {
-  background: url("/img/paperwall.svg") repeat;
-  background-size: 200px auto;
-  font-family: "kurewa-gothic", sans-serif;
-  color: #2f2f30;
-}
-
 .nav-links-p3 {
   display: flex;
   justify-content: center;
@@ -250,7 +244,6 @@ body.planning-p3 {
   display: flex;
   align-items: center;
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: center;
 }
 .block-p3 .content-p3 {
@@ -258,12 +251,15 @@ body.planning-p3 {
   flex-direction: column;
   gap: 16px;
 }
+.block-p3 .content-p3 .q1 {
+  margin-left: 100px;
+}
 .block-p3 .content-p3 .question-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 .block-p3 .content-p3 .question-desc {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 12px;
 }
@@ -287,20 +283,28 @@ body.planning-p3 {
   border-color: #3E5764;
   box-shadow: 0 0 0 1px rgba(62, 87, 100, 0.2);
 }
-.block-p3 .content-p3 .rounded-input {
-  width: 300px;
-}
 .block-p3 .content-p3 .rounded-textarea {
-  width: 627px;
-  height: 160px;
+  width: 600px;
+  min-height: 160px;
   resize: none;
 }
 .block-p3 .content-p3 .file-label {
   font-style: italic;
 }
 
+textarea.auto-resize {
+  resize: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
 .block-p3--blue1 {
   background-image: url("/img/planPage3-bg1.svg");
+  background-size: cover;
+  background-position: left top;
+  width: 100%;
+  min-height: 400px;
 }
 
 .block-p3--purple {
@@ -522,7 +526,7 @@ body.planning {
   justify-content: center;
   align-items: flex-start;
   gap: 0px;
-  margin-left: 750px;
+  margin-left: 640px;
   margin-top: 56px;
   max-width: 1440px;
 }
@@ -554,11 +558,17 @@ body.planning {
 }
 .vangogh-section .questions .question-block {
   margin-bottom: -15px;
+  font-size: 20px;
+  font-weight: 600;
 }
 .vangogh-section .questions .checkbox-group {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+.vangogh-section .questions .checkbox-group .question-title {
+  font-size: 20px;
+  font-weight: 600;
 }
 .vangogh-section .questions .checkbox-group label {
   font-weight: 400;

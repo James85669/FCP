@@ -21,10 +21,11 @@
     <!-- Q1：場景填空（藍色左上）-->
     <section class="block-p3 block-p3--blue1">
         <div class="content-p3">
+            <div class="q1">
             <p class="question-title">想像那一天，你希望告別的地點會在哪裡？</p>
             <p class="question-desc">（例如：森林裡、海邊、老家的院子、山中小屋、教堂、草原⋯⋯）</p>
             <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
-        </div>
+            </div>
     </section>
 
     <!-- Q2：插圖排版區（右上） + 文字敘述 -->
@@ -45,7 +46,7 @@
             <label><input type="checkbox" /> 簡單俐落（乾淨背景、少量花飾）</label>
             <label><input type="checkbox" /> 村民夥伴（農具小物、生活形式）</label>
             <label><input type="checkbox" /> 其他：</label>
-            <input type="text" placeholder="請填寫文字…" class="rounded-input" />
+            <textarea placeholder="請填寫文字…" class="rounded-textarea auto-resize"></textarea>
         </div>
     </section>
 
@@ -53,7 +54,7 @@
     <section class="block-p3 block-p3--blue2">
         <div class="content-p3">
             <p class="question-title">你希望現場播放什麼音樂？</p>
-            <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
+            <textarea placeholder="請填寫文字…" class="rounded-textarea auto-resize"></textarea>
         </div>
     </section>
 
@@ -66,13 +67,13 @@
             <label><input type="checkbox" /> 唱一首你喜歡的歌</label>
             <label><input type="checkbox" /> 辦一場市集</label>
             <label><input type="checkbox" /> 自訂行為</label>
-            <textarea placeholder="請填寫文字…" class="rounded-textarea"></textarea>
+            <textarea placeholder="請填寫文字…" class="rounded-textarea auto-resize"></textarea>
         </div>
     </section>
 
     <!-- Q6：橘色底圖區 + checkbox -->
     <section class="block-p3 block-p3--orange">
-         <img src="../../img/planPage3-painting3.svg" alt="插圖" class="img-p3 img-p3--orange" />
+        <img src="../../img/planPage3-painting3.svg" alt="插圖" class="img-p3 img-p3--orange" />
         <div class="content-p3">
             <p class="question-title">是否想將下方場景分享給某個人？</p>
             <label><input type="checkbox" /> 是，<span class="file-label">upload your file.</span> <input
@@ -120,6 +121,21 @@
             clearTimeout(animationId);
             frame = 1;
             btn.src = '../../img/btn-keep-1.svg';
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const textareas = document.querySelectorAll('.auto-resize');
+
+        textareas.forEach(textarea => {
+            textarea.style.height = 'auto'; // 確保先重設高度
+            textarea.style.overflowY = 'hidden'; // 避免出現捲軸
+            textarea.style.height = textarea.scrollHeight + 'px'; // 初始高度
+
+            textarea.addEventListener('input', () => {
+                textarea.style.height = 'auto'; // 先重設
+                textarea.style.height = textarea.scrollHeight + 'px'; // 根據內容調整高度
+            });
         });
     });
 
