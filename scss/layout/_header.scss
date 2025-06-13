@@ -8,11 +8,11 @@
   height: 159px;
   padding: 20px 60px;
   z-index: 3000;
+  overflow: visible; // ✅ 避免 dropdown 被裁切
 
   display: flex;
   justify-content: center;
   align-items: center;
-
 
   &__inner {
     max-width: 1440px;
@@ -21,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: visible; // ✅ 確保 dropdown 可外露
   }
 
   &__logo img {
@@ -28,11 +29,10 @@
     height: 98px;
   }
 
-  // ✅ 新增這段容器，包住 nav + member
   &__right {
     display: flex;
     align-items: center;
-    gap: 58px; // 你要的間距
+    gap: 58px;
   }
 
   &__nav {
@@ -52,19 +52,83 @@
       }
     }
   }
+}
 
-  &__member {
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
+.header__member {
+  position: relative;
 
-      .member-icon {
-        width: 90px;
-        height: 90px;
-        object-fit: contain;
-        transition: filter 0.3s ease;
+  .hamburger {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .member-dropdown {
+    position: absolute;
+    top: 100%;
+    right: -30px; // 調整位置以避免被裁切
+    z-index: 4000;
+    display: none;
+    padding: 20px;
+    width: 200px;
+    background-color: transparent;
+
+    .dropdown-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: auto;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none; // ✅ 不阻擋點擊
+    }
+
+    .dropdown-menu {
+      position: relative;
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+      text-align: center;
+
+      li {
+
+        margin-bottom: 30px;
+
+        a {
+          text-decoration: none;
+          color: #2f2f30;
+          font-size: 24px;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
+  }
+
+  &.active .member-dropdown {
+    display: block;
+  }
+}
+
+.dropdown-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }

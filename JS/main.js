@@ -137,3 +137,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+const memberBtn = document.querySelector('.header__member .hamburger');
+const memberBox = document.querySelector('.header__member');
+
+memberBtn.addEventListener('click', (e) => {
+  e.stopPropagation(); // ✅ 阻止事件向上冒泡
+  memberBox.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (!memberBox.contains(e.target)) {
+    memberBox.classList.remove('active');
+  }
+});
+
+const dropdownCloseBtn = document.querySelector('.dropdown-close');
+
+if (dropdownCloseBtn) {
+  dropdownCloseBtn.addEventListener('click', () => {
+    memberBox.classList.remove('active');
+  });
+}
