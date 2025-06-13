@@ -301,10 +301,10 @@ textarea.auto-resize {
 
 .block-p3--blue1 {
   background-image: url("/img/planPage3-bg1.svg");
-  background-size: cover;
   background-position: left top;
-  width: 100%;
-  min-height: 400px;
+  width: 800px;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .block-p3--purple {
